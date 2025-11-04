@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>سيارتي - الحجوزات والتواصل</title>
+
+<!-- خط Cairo الجميل -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* إعدادات عامة */
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  color: #222;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #0a9c6d, #0077b6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* الشريط العلوي */
+header {
+  background: rgba(255,255,255,0.9);
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.3em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+header a {
+  color: #0077b6;
+  text-decoration: none;
+  font-weight: 600;
+}
+header a:hover {
+  text-decoration: underline;
+}
+
+/* المحتوى الرئيسي */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 50px 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(4px);
+}
+
+/* تصميم النموذج */
+form {
+  background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(250,250,250,0.9));
+  padding: 35px 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25), inset 0 0 12px rgba(0,119,182,0.1);
+  max-width: 480px;
+  width: 100%;
+  border: 2px solid rgba(0,119,182,0.25);
+  animation: fadeIn 1s ease-in-out;
+  position: relative;
+}
+form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(135deg, #0077b6, #0a9c6d);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+form h2 {
+  text-align: center;
+  color: #0077b6;
+  margin-bottom: 25px;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+/* الحقول */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #0a4a5f;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(0,119,182,0.3);
+  border-radius: 10px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 1em;
+  transition: 0.3s;
+  background: rgba(255,255,255,0.95);
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #0077b6;
+  outline: none;
+  box-shadow: 0 0 7px rgba(0,119,182,0.4);
+}
+
+/* الزر */
+button {
+  width: 100%;
+  background: linear-gradient(90deg, #0a9c6d, #0077b6);
+  color: beige;
+  border: none;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 0.5px;
+}
+button:hover {
+  opacity: 0.95;
+  transform: scale(1.03);
+  box-shadow: 0 0 12px rgba(0,119,182,0.4);
+}
+
+/* الفوتر */
+footer {
+  background: linear-gradient(90deg, #0a9c6d, #0077b6);
+  color: beige;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 600;
+  width: 100%;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  🚗 موقع <strong>سيارتي</strong> | 
+  <a href="index.html">العودة للرئيسية</a>
+</header>
+
+<main>
+  <form>
+    <h2>📅 الحجوزات والتواصل</h2>
+
+    <label for="name">الاسم الكامل:</label>
+    <input type="text" id="name" name="name" placeholder="اكتب اسمك الكامل" required>
+
+    <label for="email">الإيميل:</label>
+    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+    <label for="phone">رقم الجوال:</label>
+    <input type="tel" id="phone" name="phone" placeholder="05xxxxxxxx" required>
+
+    <label for="type">نوع الحجز:</label>
+    <select id="type" name="type" required>
+      <option value="">اختر نوع الحجز</option>
+      <option value="تأجير سيارة">🚘 تأجير سيارة</option>
+      <option value="صيانة">🛠️ صيانة</option>
+      <option value="تواصل عام">📞 تواصل عام</option>
+    </select>
+
+    <label for="message">الرسالة:</label>
+    <textarea id="message" name="message" rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
+
+    <button type="submit">📤 إرسال</button>
+  </form>
+</main>
+
+<footer>
+  © 2025 جميع الحقوق محفوظة لموقع <strong>سيارتي</strong> 🚗
+</footer>
+
+</body>
+</html>
