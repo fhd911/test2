@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>سيارتي - الرئيسية</title>
+
+<!-- خط Cairo الجميل -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* إعدادات عامة */
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  color: #222;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  scroll-behavior: smooth;
+}
+
+/* خلفية الفيديو */
+.video-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* طبقة شفافة فوق الفيديو */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.45);
+  z-index: -1;
+}
+
+/* رأس الصفحة */
+header {
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+  color: #0077b6;
+  font-weight: 700;
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #0077b6;
+  font-weight: 600;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid #0077b6;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  background: linear-gradient(90deg, #0a9c6d, #0077b6);
+  color: beige;
+  transform: scale(1.05);
+}
+
+/* المحتوى */
+main {
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1.2s ease-in-out;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+main h2 {
+  color: beige;
+  font-size: 2.3em;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 5px #000;
+  font-weight: 700;
+}
+
+/* بطاقات السيارات */
+.car-card {
+  display: inline-block;
+  background: rgba(255,255,255,0.92);
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  width: 260px;
+  margin: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.car-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+.car-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.car-card h3 {
+  color: #0077b6;
+  margin: 10px 0 5px 0;
+  font-weight: 700;
+}
+.car-card p {
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* الأزرار */
+button {
+  background: linear-gradient(90deg, #0a9c6d, #0077b6);
+  color: beige;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1em;
+  font-weight: 600;
+}
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.06);
+}
+
+/* الفوتر الثابت */
+#footer {
+  position: fixed;
+  bottom: 0; left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #0a9c6d, #0077b6);
+  color: beige;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1em;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+  z-index: 3;
+  font-weight: 600;
+}
+</style>
+
+</head>
+<body>
+
+<!-- الفيديو الخلفي -->
+<video class="video-bg" autoplay muted loop playsinline>
+  <source src="media/fah.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<!-- الشريط العلوي -->
+<header>
+  <h1>🚗 سيارتي</h1>
+  <nav class="nav-menu">
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">عن الموقع</a>
+    <a href="cars.html">السيارات</a>
+    <a href="booking.html">الحجوزات والتواصل</a>
+  </nav>
+</header>
+
+<main>
+  <h2>أحدث السيارات المعروضة</h2>
+  
+  <div class="car-card">
+    <img src="https://via.placeholder.com/250x150?text=Toyota+Camry" alt="Toyota Camry">
+    <h3>Toyota Camry</h3>
+    <p>السعر: 85,000 ريال</p>
+    <button>عرض التفاصيل</button>
+  </div>
+
+  <div class="car-card">
+    <img src="https://via.placeholder.com/250x150?text=Hyundai+Sonata" alt="Hyundai Sonata">
+    <h3>Hyundai Sonata</h3>
+    <p>السعر: 78,000 ريال</p>
+    <button>عرض التفاصيل</button>
+  </div>
+
+  <div class="car-card">
+    <img src="https://via.placeholder.com/250x150?text=Nissan+Altima" alt="Nissan Altima">
+    <h3>Nissan Altima</h3>
+    <p>السعر: 82,000 ريال</p>
+    <button>عرض التفاصيل</button>
+  </div>
+</main>
+
+<!-- الفوتر -->
+<div id="footer">
+  © 2025 جميع الحقوق محفوظة لموقع <strong>سيارتي</strong> 🚗
+</div>
+
+</body>
+</html>
