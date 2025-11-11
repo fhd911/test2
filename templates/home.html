@@ -1,0 +1,74 @@
+{% include 'header.html' %}
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: #f7f7f7;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0a8f5b, #086b44);
+  color: white;
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.products {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.product-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+</style>
+
+<div class="hero">
+  <h1>أهلاً بك في متجر منزلي</h1>
+  <p>أفضل المنتجات المنزلية بجودة عالية وأسعار مناسبة</p>
+</div>
+
+<div class="products">
+  <div class="product-card">
+    <img src="https://via.placeholder.com/200" alt="">
+    <h3>اسم المنتج</h3>
+    <p>سعر المنتج: 50 ريال</p>
+  </div>
+
+  <div class="product-card">
+    <img src="https://via.placeholder.com/200" alt="">
+    <h3>اسم المنتج</h3>
+    <p>سعر المنتج: 75 ريال</p>
+  </div>
+
+  <div class="product-card">
+    <img src="https://via.placeholder.com/200" alt="">
+    <h3>اسم المنتج</h3>
+    <p>سعر المنتج: 120 ريال</p>
+  </div>
+</div>
+
+{% include 'footer.html' %}

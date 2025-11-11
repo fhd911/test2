@@ -1,0 +1,19 @@
+{% include "header.html" %}
+<div class="container" style="max-width:450px;margin:auto;padding-top:60px;">
+
+  <h2 style="text-align:center;margin-bottom:20px;">تسجيل الدخول</h2>
+
+  <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="اسم المستخدم" required class="form-control"><br>
+      <input type="password" name="password" placeholder="كلمة المرور" required class="form-control"><br>
+
+      <button type="submit" class="btn btn-success w-100">دخول</button>
+  </form>
+
+  <p style="margin-top:15px;text-align:center;">
+      مستخدم جديد؟ <a href="{% url 'signup' %}">إنشاء حساب</a>
+  </p>
+
+</div>
+{% include "footer.html" %}
